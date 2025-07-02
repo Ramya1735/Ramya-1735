@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="email" placeHolder="Enter emailId">
+    <p id="message"></p>
+    <script>
+        let email=document.getElementById("email");
+        email.addEventListener("input",function(){
+            let str=email.value.toLowerCase();
+            let emailregex=/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                if(emailregex.test(str)){
+                document.getElementById("message").innerHTML="Valid email";
+                document.getElementById("message").style="color:green";
+            }else{
+                document.getElementById("message").innerHTML="InValid email";
+                document.getElementById("message").style="color:red";
+            }
+        })
+    </script>
+</body>
+</html>
